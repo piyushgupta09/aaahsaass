@@ -1,0 +1,206 @@
+$ bash notes/script.sh 
+
+Using version ^1.8 for laravel/fortify
+./composer.json has been updated
+Running composer update laravel/fortify
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 5 installs, 0 updates, 0 removals
+  - Locking bacon/bacon-qr-code (2.0.4)
+  - Locking dasprid/enum (1.0.3)
+  - Locking laravel/fortify (v1.8.0)
+  - Locking paragonie/constant_time_encoding (v2.4.0)  
+  - Locking pragmarx/google2fa (8.0.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 0 installs, 0 updates, 1 removal
+  - Removing laravel/ui (v3.3.0)
+1 package suggestions were added by new dependencies, use `composer suggest` to see details.
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+Discovered Package: facade/ignition
+Discovered Package: fruitcake/laravel-cors
+Discovered Package: laravel/fortify
+Discovered Package: laravel/sail
+Discovered Package: laravel/tinker
+Discovered Package: nesbot/carbon
+Discovered Package: nunomaduro/collision
+Package manifest generated successfully.
+76 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+> @php artisan vendor:publish --tag=laravel-assets --ansi
+No publishable resources for tag [laravel-assets].
+Publishing complete.
+
+Copied File [\vendor\laravel\fortify\stubs\fortify.php] To [\config\fortify.php]
+Copied File [\vendor\laravel\fortify\stubs\CreateNewUser.php] To [\app\Actions\Fortify\CreateNewUser.php]
+Copied File [\vendor\laravel\fortify\stubs\FortifyServiceProvider.php] To [\app\Providers\FortifyServiceProvider.php]        
+Copied File [\vendor\laravel\fortify\stubs\PasswordValidationRules.php] To [\app\Actions\Fortify\PasswordValidationRules.php]Copied File [\vendor\laravel\fortify\stubs\ResetUserPassword.php] To [\app\Actions\Fortify\ResetUserPassword.php]
+Copied File [\vendor\laravel\fortify\stubs\UpdateUserProfileInformation.php] To [\app\Actions\Fortify\UpdateUserProfileInformation.php]
+Copied File [\vendor\laravel\fortify\stubs\UpdateUserPassword.php] To [\app\Actions\Fortify\UpdateUserPassword.php]
+Copied Directory [\vendor\laravel\fortify\database\migrations] To [\database\migrations]
+Publishing complete.
+Nothing to migrate.
+
+
+Using version ^2.5 for livewire/livewire
+./composer.json has been updated
+Running composer update livewire/livewire
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 1 install, 0 updates, 0 removals
+  - Locking livewire/livewire (v2.5.5)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+  - Installing livewire/livewire (v2.5.5): Extracting archive
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+Discovered Package: facade/ignition
+Discovered Package: fruitcake/laravel-cors
+Discovered Package: laravel/fortify
+Discovered Package: laravel/sail
+Discovered Package: laravel/tinker
+Discovered Package: livewire/livewire
+Discovered Package: nesbot/carbon
+Discovered Package: nunomaduro/collision
+Package manifest generated successfully.
+77 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+> @php artisan vendor:publish --tag=laravel-assets --ansi
+No publishable resources for tag [laravel-assets].
+Publishing complete.
+
+
+
+Using version ^3.3 for laravel/ui
+./composer.json has been updated
+Running composer update laravel/ui
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 1 install, 0 updates, 0 removals
+  - Locking laravel/ui (v3.3.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+  - Installing laravel/ui (v3.3.0): Extracting archive
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+Discovered Package: facade/ignition
+Discovered Package: fruitcake/laravel-cors
+Discovered Package: laravel/fortify
+Discovered Package: laravel/sail
+Discovered Package: laravel/tinker
+Discovered Package: laravel/ui
+Discovered Package: livewire/livewire
+Discovered Package: nesbot/carbon
+Discovered Package: nunomaduro/collision
+Package manifest generated successfully.
+77 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+> @php artisan vendor:publish --tag=laravel-assets --ansi
+No publishable resources for tag [laravel-assets].
+Publishing complete.
+
+
+Bootstrap scaffolding installed successfully.
+
+
+Please run "npm install && npm run dev" to compile your fresh scaffolding.
+npm WARN deprecated popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.2 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 775 packages from 450 contributors and audited 778 packages in 14.475s
+
+85 packages are looking for funding
+  run `npm fund` for details       
+
+found 0 vulnerabilities
+
+
+
+
+npm WARN bootstrap@5.1.0 requires a peer of @popperjs/core@^2.9.3 but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ bootstrap@5.1.0
+updated 1 package and audited 778 packages in 2.887s
+
+85 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ @popperjs/core@2.9.3
+added 1 package from 1 contributor and audited 779 packages in 2.883s
+
+86 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ bootstrap-icons@1.5.0
+added 1 package from 1 contributor and audited 780 packages in 3.07s
+
+86 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+
+
+npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ laravel-mix@6.0.27
+updated 1 package and audited 780 packages in 16.009s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+
+
+> @ dev C:\xampp\htdocs\Projects\aaahsaass-dev
+> npm run development
+
+> @ development C:\xampp\htdocs\Projects\aaahsaass-dev
+> mix
+
+* Mix █████████████████████████ emitting (95%)
+ emit
+
+* Mix █████████████████████████ done (99%) plugins
+ WebpackBar:done
+
+√ Mix
+
+   Laravel Mix v6.0.27   
+
+✔ Compiled Successfully in 7139ms
+    /js/app.js │ 3.21 MiB
+    css/app.css │ 201 KiB
+webpack compiled successfully
