@@ -309,3 +309,59 @@ Step 5 : Configure authentication packages
         $ npm install laravel-mix@latest --save-dev
         $ npm run dev
         $ npm run dev
+    
+    - Fortify
+
+        * Add this to config/app.php providers=[]
+            "App\Providers\FortifyServiceProvider::class,"
+
+        * Edit app/Providers/FortifyServiceProvider boot()
+            Fortify::loginView(function () { return view('auth.login'); });
+            Fortify::registerView(function () { return view('auth.register'); });
+            Fortify::requestPasswordResetLinkView(function () { return view('auth.forgot'); });
+            Fortify::resetPasswordView(function ($request) { return view('auth.reset', ['request' => $request ]); });
+            Fortify::verifyEmailView(function () { return view('auth.verify'); });
+            Fortify::confirmPasswordView(function () { return view('auth.confirm'); });
+            Fortify::twoFactorChallengeView(function () { return view('auth.two-factor'); });
+
+        * Edit config/fortify.php
+            To enable email confirmation
+
+        * Add mailtrap credentials to .env file
+
+        * Create a symlink for storage and add icons & images
+            $ php artisan storage:link
+            The [C:\xampp\htdocs\Projects\aaahsaass-dev\public\storage] link has been connected to [C:\xampp\htdocs\Projects\aaahsaass-dev\storage\app/public].
+            The links have been created.
+
+        * Create following to structure app UI
+            resources/js/auth.js
+            resources/js/dashboard.js
+            resources/sass/auth.scss
+            resources/sass/dashboard.scss
+            resources/views/layout/app.blade.php
+            resources/views/layout/maser.blade.php
+            resources/views/layout/auth.blade.php
+            resources/views/layout/dashboard.blade.php
+            resources/views/auth/confirm.blade.php
+            resources/views/auth/forgot.blade.php
+            resources/views/auth/login.blade.php
+            resources/views/auth/register.blade.php
+            resources/views/auth/reset.blade.php
+            resources/views/auth/two-factor.blade.php
+            resources/views/auth/verify.blade.php
+
+        * Edit webpack.mix config file
+            mix.js('resources/js/app.js', 'public/js')
+                .js('resources/js/auth.js', 'public/js')
+                .js('resources/js/dashboard.js', 'public/js')
+                .sass('resources/sass/app.scss', 'public/css')
+                .sass('resources/sass/auth.scss', 'public/css')
+                .sass('resources/sass/dashboard.scss', 'public/css')
+                .sourceMaps();
+
+
+
+
+
+
