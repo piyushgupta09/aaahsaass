@@ -7,98 +7,99 @@ Two Factor Authentication
 @section('description')
 Authentication code is required to enter.
 <br>
-<small>Check Google Authenticator App or any other 2fa app</small>
+
 @endsection
 
 @section('form')
 
-<!-- 2FA Codes -->
-<div id="collapse2FACode" class="collapse show" aria-labelledby="heading2FACode" data-parent="#accordion">
+<div class="accordion mb-4" id="tfaAuthentication">
 
-    <!-- Form title -->
-    <p class="mb-2">Enter Authentication Code</p>
+    <div class="accordion-item border-0">
 
-    <!-- Form -->
-    <form method="POST" action="{{ url('/two-factor-challenge') }}">
-        @csrf
+        <h2 class="accordion-header" id="codeInput">
+            <button
+                type="button" 
+                class="accordion-button shadow-none text-dark" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#codeInputCollapse"
+                aria-expanded="true" 
+                aria-controls="codeInputCollapse">
+                Authentication code
+            </button>
+        </h2>
 
-        <!-- 2fa Code Input -->
-        <div class="mb-3">
-            <label for="code_input" class="sr-only">2FA Code</label>
-            <input type="number" name="code" id="code_input" class="form-control" placeholder="Enter TOTP Code">
-            @error('code')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-            @if($errors->any())
-                <div class="form-group">
-                    @foreach($errors->all() as $error)
-                        <small class="text-danger" style="font-weight: 500">
-                            {{ $error }}
-                        </small>
-                    @endforeach
-                </div>
-            @endif
+        <div 
+            id="codeInputCollapse" 
+            class="accordion-collapse collapse show" 
+            data-bs-parent="#tfaAuthentication"
+            aria-labelledby="codeInput">
+
+        <div class="accordion-body bg-white border-0">
+
+                <p>Check Google Authenticator App or any other 2fa app</p>
+                <form method="POST" action="{{ url('/two-factor-challenge') }}">
+                    @csrf
+
+                    <div class="mb-3">
+                        <label for="code_input" class="sr-only">2FA Code</label>
+                        <input 
+                            id="code_input" 
+                            type="number" 
+                            name="code" autofocus
+                            class="form-control"
+                            placeholder="Enter TOTP Code">
+                    </div>
+
+                    <button class="btn btn-primary text-white w-100" type="submit">Verify Code</button>
+                </form>
+
+            </div>
         </div>
-
-        <!-- Submit form -->
-        <input
-        class="btn w-100 btn-primary mb-4"
-        type="submit"
-        value="Verify Code">
-
-    </form>
-
-    <div id="headingRecoveryCode" data-toggle="collapse" data-target="#collapseRecoveryCode" aria-expanded="true"
-        aria-controls="collapseRecoveryCode">
-        Having trouble?
-        <span class="text-primary" style="cursor: pointer;">
-            <u>Use Recovery Code</u>
-        </span>
     </div>
-</div>
 
-<!-- Recovery Codes -->
-<div id="collapseRecoveryCode" class="collapse" aria-labelledby="headingRecoveryCode" data-parent="#accordion">
+    <div class="accordion-item border-0">
 
-    <!-- Form title -->
-    <p class="mb-2">Enter Recovery Code</p>
+        <h2 class="accordion-header" id="recoveryCodeInput">
+            <button
+                type="button" 
+                class="accordion-button collapsed shadow-none text-dark" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#recoveryCodeInputCollapse"
+                aria-expanded="true" 
+                aria-controls="recoveryCodeInputCollapse">
+                Recovery code
+            </button>
+        </h2>
 
-    <!-- Form -->
-    <form method="POST" action="{{ url('/two-factor-challenge') }}">
-        @csrf
+        <div 
+            id="recoveryCodeInputCollapse" 
+            class="accordion-collapse collapse" 
+            data-bs-parent="#tfaAuthentication"
+            aria-labelledby="recoveryCodeInput">
 
-        <!-- Recovery code Input -->
-        <div class="mb-3">
-            <label for="recovery_code_input" class="sr-only">Recovery Code</label>
-            <input type="number" name="recovery_code" id="recovery_code_input" class="form-control"
-                placeholder="Enter unused recovery Code">
-            @error('recovery_code')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-            @if($errors->any())
-                <div class="form-group">
-                    @foreach($errors->all() as $error)
-                        <small class="text-danger" style="font-weight: 500">
-                            {{ $error }}
-                        </small>
-                    @endforeach
-                </div>
-            @endif
+        <div class="accordion-body bg-white border-0">
+
+                <p>You must have kept them at secured place writen down</p>
+                <form method="POST" action="{{ url('/two-factor-challenge') }}">
+                    @csrf
+
+                    <div class="mb-3">
+                        <label for="recovery_code_input" class="sr-only">2FA Code</label>
+                        <input 
+                            id="recovery_code_input" 
+                            type="text" 
+                            name="recovery_code" 
+                            class="form-control"
+                            placeholder="Enter unused recovery Code">
+                    </div>
+
+                    <button class="btn btn-primary text-white w-100" type="submit">Verify Code</button>
+                </form>
+
+            </div>
         </div>
-
-        <!-- Submit form -->
-        <input class="btn w-100 btn-primary mb-4" type="submit" value="Verify Code">
-    </form>
-
-    <div id="heading2FACode" data-toggle="collapse" data-target="#collapse2FACode" aria-expanded="true"
-        aria-controls="collapse2FACode">
-        Having trouble?
-        <span class="text-primary"><u>Use Authentication Code</u></span>
     </div>
+
 </div>
 
 @endsection
