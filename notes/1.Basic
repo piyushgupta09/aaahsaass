@@ -360,6 +360,12 @@ Step 5 : Configure authentication packages
                 .sass('resources/sass/dashboard.scss', 'public/css')
                 .sourceMaps();
 
+    - Livewire
+
+        * Add these to app & dashboard layout files :
+            @livewireStyles
+            @livewireScripts
+
 
 
 
