@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('app.home');
 })->name('home');
+
+Route::get('/profile', function () {
+    return view('app.users.profile');
+})->middleware('verified');
