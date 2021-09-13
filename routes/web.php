@@ -16,7 +16,7 @@ use App\Http\Controllers\CheckoutController;
 */
 
 Route::get('/', function () {
-    return view('app.home');
+    return view('welcome');
 });
 
 Route::get('/home', function () {
