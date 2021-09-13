@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
+use DateTime;
 use Illuminate\Support\Facades\Http;
 
 class CheckoutController extends Controller
@@ -12,7 +12,7 @@ class CheckoutController extends Controller
 	public function show()
 	{
 		return view('checkout', [
-			'datetime' => Carbon::now(),
+			'datetime' => (new DateTime())->getTimestamp(),
 			'merchantId' => $this->merchantId,
 		]);
 	}
