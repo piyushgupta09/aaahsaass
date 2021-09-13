@@ -12,14 +12,4 @@
 
 </div>
 
-<x-shop-cart-view />
-<x-shop-cart-view-btn />
-
-<x-shop-checkout-address /><br>
-<x-shop-checkout-delivery /><br>
-<x-shop-checkout-payment /><br>
-<x-shop-checkout-confirm /><br>
-
-<x-shop-order-placed />
-
 @endsection
