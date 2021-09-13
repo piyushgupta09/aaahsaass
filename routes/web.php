@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,13 @@ Route::get('/home', function () {
 Route::get('/profile', function () {
     return view('app.users.profile');
 })->middleware('verified');
+
+Route::name('checkout.')->prefix('checkout')->group(function () {
+    // GET|HEAD | checkout/checkout         | checkout.show    | App\Checkout@showCheckout   | web
+    // POST     | checkout/checkout         | checkout.process | App\Checkout@processCheckout| web
+    // POST     | checkout/checkout-cancel  | checkout.cancel  | App\Checkout@cancel         | web
+    // POST     | checkout/checkout-success | checkout.success | App\Checkout@success        | web
+    Route::get('/', [CheckoutController::class, 'show'])->name('show');
+    Route::post('/', [CheckoutController::class, 'process'])->name('process');
+    Route::post('/response', [CheckoutController::class, 'response'])->name('response');
+});
